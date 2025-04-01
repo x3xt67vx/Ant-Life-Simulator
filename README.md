@@ -74,3 +74,79 @@
 ---
 
 Этот проект предназначен для симуляции жизни муравьёв в заданной территории с различными объектами и взаимодействиями.
+
+## Примерная структура проекта
+
+![Ant Simulation Screenshot](antworld.svg) 
+<!-- 
+AntWorld/
+├── CMakeLists.txt
+├── README.md
+├── include/
+│   ├── core/
+│   │   ├── World.hpp
+│   │   ├── Config.hpp
+│   │   └── Utils.hpp
+│   ├── entities/
+│   │   ├── Entity.hpp
+│   │   ├── Ant/
+│   │   │   ├── Ant.hpp
+│   │   │   ├── WorkerAnt.hpp
+│   │   │   └── SoldierAnt.hpp
+│   │   ├── Food.hpp
+│   │   ├── Pheromone.hpp
+│   │   ├── Anthill.hpp
+│   │   ├── Enemy/
+│   │   │   ├── Enemy.hpp
+│   │   │   ├── Cigarette.hpp
+│   │   │   └── Beetle.hpp
+│   │   └── Position.hpp
+│   └── rendering/
+│       ├── Renderer.hpp
+│       └── RaylibRenderer.hpp
+└── src/
+├── main.cpp
+├── core/
+│   ├── World.cpp
+└── entities/
+├── Ant/
+│   └── Ant.cpp
+├── Food.cpp
+├── Pheromone.cpp
+├── Anthill.cpp
+└── Enemy/
+└── Enemy.cpp
+-->
+
+
+## Основные компоненты
+
+### Ядро (`include/core/`)
+- `World.hpp` - управление игровым миром и симуляцией
+- `Config.hpp` - настройки баланса и константы
+- `Utils.hpp` - вспомогательные утилиты
+
+### Сущности (`include/entities/`)
+- `Entity.hpp` - базовый класс всех объектов
+- `Ant/` - иерархия классов муравьёв
+    - `Ant.hpp` - базовый класс
+    - `WorkerAnt.hpp` - муравей-работник
+    - `SoldierAnt.hpp` - муравей-воин
+- `Enemy/` - враги
+    - `Cigarette.hpp` - окурок
+    - `Beetle.hpp` - жук
+- Ресурсы:
+    - `Food.hpp` - пища
+    - `Pheromone.hpp` - феромоны
+    - `Anthill.hpp` - муравейник
+
+### Отрисовка (`include/rendering/`)
+- `Renderer.hpp` - абстрактный рендерер
+- `RaylibRenderer.hpp` - реализация через raylib
+
+## Сборка
+
+```bash
+mkdir build && cd build
+cmake ..
+make

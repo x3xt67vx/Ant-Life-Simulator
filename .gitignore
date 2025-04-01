@@ -9,3 +9,4 @@ build/
 *.obj
 *.log
 *.tmp
+antworld.svg
