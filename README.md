@@ -77,7 +77,7 @@
 
 ## Примерная структура проекта
 
-![Ant Simulation Screenshot](antworld.svg) 
+![Ant Simulation Screenshot](ant.png) 
 <!-- 
 AntWorld/
 ├── CMakeLists.txt
@@ -150,3 +150,4 @@ AntWorld/
 mkdir build && cd build
 cmake ..
 make
+```
